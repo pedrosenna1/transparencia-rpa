@@ -12,7 +12,7 @@ def normalize(palavra: str) -> str:
 def act(search: str, filtro_busca: Optional[str] = None) -> dict:
     with sync_playwright() as playwright:
         chromium = playwright.chromium
-        browser = chromium.launch(headless=False)
+        browser = chromium.launch(headless=True)
         context = browser.new_context()
         try:
             page = context.new_page()
